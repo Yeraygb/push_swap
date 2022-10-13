@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 10:38:31 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/10/07 15:25:32 by ygonzale         ###   ########.fr       */
+/*   Created: 2022/10/13 11:55:24 by ygonzale          #+#    #+#             */
+/*   Updated: 2022/10/13 11:55:58 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 size_t	ft_strlen(const char *str);
 void	check_argc_errors(int argc);
 char	*ft_strjoin(char const *s1, char const *s2);
+int		check_alpha(char *c);
 
 #endif
