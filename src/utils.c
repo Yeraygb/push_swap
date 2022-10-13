@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 11:46:41 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/10/13 12:50:35 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/10/13 14:17:58 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,17 +97,20 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (str);
 }
 
-int	check_alpha(char *str)
+int	check_alpha(char *argv)
 {
-	int	i;
+	int		i;
+	char	**str;
+	char	aux;
 
 	i = 0;
-	program->temp = ft_split(str, ' ');
+	str = ft_split(argv, ' ');
 	if (str[i] && str[0] == '-')
 		i++;
 	while (str[i])
 	{
-		if (str[i] < '0' && str[i] > '9')
+		aux = str[i];
+		if (aux < '0' && aux > '9')
 			return (1);
 		i++;
 	}
