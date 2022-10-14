@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 10:37:28 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/10/13 15:34:46 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/10/14 13:26:35 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,9 @@ int	check_alpha(char *str)
 	return (1);
 }
 
-void	ft_push_swap(t_program	*program, char **argv)
+void	ft_push_swap(char **argv)
 {
 	int		i;
-	char	**str;
 
 	i = 0;
 	printf("1º: %s\n", argv[0]);
@@ -48,14 +47,12 @@ void	ft_push_swap(t_program	*program, char **argv)
 
 int	main(int argc, char **argv)
 {
-	t_program	program;
-
 	if (argc >= 2)
 	{
 		argv++;
 		if (argc == 2)
 			argv = ft_split(*argv, ' ');
-		ft_push_swap(&program, argv);
+		ft_push_swap(argv);
 	}
 	return (0);
 }
