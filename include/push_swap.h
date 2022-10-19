@@ -17,16 +17,16 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-typedef struct s_program
+typedef struct s_stack
 {
-	char	**temp;
-	char	**a;
-	char	**b;
-}	t_program;
+	int	a;
+	int b;
+}	t_stack;
 
 typedef struct s_list
 {
 	int				number;
+	int				i;
 	struct s_list	*next;
 }	t_list;
 
@@ -34,8 +34,8 @@ void	ft_putendl_fd(char *s, int fd);
 char	**ft_split(char const *s, char c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 size_t	ft_strlen(const char *str);
-void	check_argc_errors(int argc);
+void	check_arg_errors(int argc, char **argv, t_stack *stack);
 char	*ft_strjoin(char const *s1, char const *s2);
-int		check_alpha(char *c);
+int		check_alpha(char *str);
 
 #endif

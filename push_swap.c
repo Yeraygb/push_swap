@@ -12,24 +12,6 @@
 
 #include "include/push_swap.h"
 
-int	check_alpha(char *str)
-{
-	int		i;
-	char	aux;
-
-	i = 0;
-	if (str[i] && str[0] == '-')
-		i++;
-	while (str[i])
-	{
-		aux = str[i];
-		if (aux < '0' && aux > '9')
-			return (0);
-		i++;
-	}
-	return (1);
-}
-
 void	ft_push_swap(char **argv)
 {
 	int		i;
@@ -47,14 +29,16 @@ void	ft_push_swap(char **argv)
 
 int	main(int argc, char **argv)
 {
-	t_list	list;
+	t_list	stack_a;
+	t_list	stack_b;
+	t_stack stack;
 
-	if (argc >= 2)
-	{
-		argv++;
-		if (argc == 2)
-			argv = ft_split(*argv, ' ');
-		ft_push_swap(argv);
-	}
+	stack.a = (int *) malloc(sizeof(int));
+	stack.b = (int *) malloc(sizeof(int));
+	check_arg_errors(argc, argv, &stack);
+/* 	argv++;
+	if (argc == 2)
+		argv = ft_split(*argv, ' '); */
+	ft_push_swap(argv);
 	return (0);
 }

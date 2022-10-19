@@ -12,14 +12,51 @@
 
 #include "../include/push_swap.h"
 
-void	check_argc_errors(int argc)
+void	check_arg_errors(int argc, char **argv, t_stack *stack)
 {
 	int	i;
+	int	n;
 
 	i = 0;
 	if (argc < 1)
 	{
 		ft_putendl_fd("Number of argument invalid", 2);
-		exit(1);
+		free(stack->a);
+		free(stack->b);
+		exit(0);
 	}
+	while (argv[i])
+	{
+		while (argv[i][n])
+		{
+			n = 0;
+			if (argv[i][n] < '0' || argv[i][n] > '9')
+			{
+				ft_putendl_fd("Error", 2);
+				free(stack->a);
+				free(stack->b);
+				exit (0);
+				n++;
+			}
+			i++;
+		}
+	}
+}
+
+int	check_alpha(char *str)
+{
+	int		i;
+	char	aux;
+
+	i = 0;
+	if (str[i] && str[0] == '-')
+		i++;
+	while (str[i])
+	{
+		aux = str[i];
+		if (aux < '0' && aux > '9')
+			return (0);
+		i++;
+	}
+	return (1);
 }
