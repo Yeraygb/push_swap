@@ -47,6 +47,8 @@ void	ft_push_swap(char **argv)
 
 int	main(int argc, char **argv)
 {
+	t_list	list;
+
 	if (argc >= 2)
 	{
 		argv++;
