@@ -6,7 +6,7 @@
 #    By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/29 13:39:06 by ygonzale          #+#    #+#              #
-#    Updated: 2022/10/14 13:28:00 by ygonzale         ###   ########.fr        #
+#    Updated: 2022/10/20 10:53:22 by ygonzale         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SRC = push_swap.c \
 	src/utils.c
 
 OBJS = $(SRC:.c=.o)
-FLAGS = gcc -Wall -Werror -Wextra
+FLAGS = gcc -Wall -Werror -Wextra -fsanitize=address -g3
 
 $(NAME): $(OBJS)
 	@echo ✅ "\033[92;3;4mcompilation done\033[0m" ✅

@@ -6,39 +6,48 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 10:37:28 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/10/14 13:26:35 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/10/20 13:02:36 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/push_swap.h"
 
-void	ft_push_swap(char **argv)
+void	ft_push_swap(int argc, char **argv)
 {
-	int		i;
+	int	i;
 
 	i = 0;
-	printf("1º: %s\n", argv[0]);
-	while (argv[i])
+	if (argc == 4)
+		printf("3 argumentos\n");
+	else if (argc == 6)
+		printf("5 argumentos\n");
+	else
 	{
-		if (check_alpha(argv[i]))
-			ft_putendl_fd("Error", 2);
-		printf("2º: %s\n", argv[i]);
-		i++;
+		printf("muchos argumentos\n");
+		//printf("1º: %s\n", argv[0]);
+		while (argv[i])
+		{
+	/* 		if (check_alpha(argv[i]))
+				ft_putendl_fd("Error", 2); */
+			//printf("2º: %s\n", argv[i]);
+			i++;
+		}
 	}
 }
 
 int	main(int argc, char **argv)
 {
-	t_list	stack_a;
-	t_list	stack_b;
-	t_stack stack;
+	t_stack	stack;
+	//t_list	stack_a;
+	//t_list	stack_b;
 
 	stack.a = (int *) malloc(sizeof(int));
 	stack.b = (int *) malloc(sizeof(int));
+	argv++;
 	check_arg_errors(argc, argv, &stack);
-/* 	argv++;
-	if (argc == 2)
+	printf("hey\n");
+	/*if (argc == 2)
 		argv = ft_split(*argv, ' '); */
-	ft_push_swap(argv);
+	ft_push_swap(argc, argv);
 	return (0);
 }

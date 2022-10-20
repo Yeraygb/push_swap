@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 13:23:05 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/10/07 13:48:33 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/10/20 13:14:10 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,49 +14,72 @@
 
 void	check_arg_errors(int argc, char **argv, t_stack *stack)
 {
-	int	i;
-	int	n;
-
-	i = 0;
-	if (argc < 1)
+	if (argc < 2)
 	{
 		ft_putendl_fd("Number of argument invalid", 2);
 		free(stack->a);
 		free(stack->b);
 		exit(0);
 	}
+	check_alpha(argv, stack);
+	repeat_num(argc, argv, stack);
+}
+
+void	check_alpha(char **argv, t_stack *stack)
+{
+	int	i;
+	int	n;
+
+	i = 0;
 	while (argv[i])
 	{
+		n = 0;
 		while (argv[i][n])
 		{
-			n = 0;
 			if (argv[i][n] < '0' || argv[i][n] > '9')
 			{
 				ft_putendl_fd("Error", 2);
 				free(stack->a);
 				free(stack->b);
 				exit (0);
-				n++;
 			}
-			i++;
+			n++;
 		}
+		i++;
 	}
 }
 
-int	check_alpha(char *str)
+void	repeat_num(int argc, char **argv, t_stack *stack)
 {
-	int		i;
-	char	aux;
+	int	i;
+	int	n;
+	int	k;
+	int	aux;
 
-	i = 0;
-	if (str[i] && str[0] == '-')
-		i++;
-	while (str[i])
+	i = 1;
+	aux = argc - 1;
+	while (argv[i])
 	{
-		aux = str[i];
-		if (aux < '0' && aux > '9')
-			return (0);
+		aux = atoi(argv[i]);
 		i++;
 	}
-	return (1);
+	i = 1;
+	while (argv[i])
+	{
+		n = 1;
+		k = 1;
+		while (argv[i][n])
+		{
+			if (argv[i][n] == argv[i][k])
+			{
+				ft_putendl_fd("Error, nummber repeat", 2);
+				free(stack->a);
+				free(stack->b);
+				exit (0);
+			}
+			n++;
+			k++;
+		}
+		i++;
+	}
 }

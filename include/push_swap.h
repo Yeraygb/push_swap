@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 11:55:24 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/10/13 11:55:58 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/10/20 13:06:35 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 
 typedef struct s_stack
 {
-	int	a;
-	int b;
+	int	*a;
+	int	*b;
 }	t_stack;
 
 typedef struct s_list
@@ -30,12 +30,14 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
+void	ft_push_swap(int argc, char **argv);
 void	ft_putendl_fd(char *s, int fd);
 char	**ft_split(char const *s, char c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 size_t	ft_strlen(const char *str);
 void	check_arg_errors(int argc, char **argv, t_stack *stack);
 char	*ft_strjoin(char const *s1, char const *s2);
-int		check_alpha(char *str);
+void	check_alpha(char **argv, t_stack *stack);
+void	repeat_num(int argc, char **argv, t_stack *stack);
 
 #endif
