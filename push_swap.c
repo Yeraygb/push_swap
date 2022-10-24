@@ -6,11 +6,24 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 10:37:28 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/10/24 10:52:47 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/10/24 13:00:23 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/push_swap.h"
+
+int	ft_number_count(char **argv)
+{
+	size_t	count;
+
+	count = 0;
+	while (*argv)
+	{
+		count++;
+		argv++;
+	}
+	return (count);
+}
 
 void	ft_push_swap(int argc, char **argv)
 {
@@ -38,16 +51,18 @@ void	ft_push_swap(int argc, char **argv)
 int	main(int argc, char **argv)
 {
 	t_stack	stack;
-	//t_list	stack_a;
-	//t_list	stack_b;
-
-	stack.a = (int *) malloc(sizeof(int));
-	stack.b = (int *) malloc(sizeof(int));
+	int		i;
+//	t_list	stack_a;
+	i = 0;
+	stack.count = ft_number_count(argv);
+	stack.a = (int *) malloc((stack.count) * sizeof(int));
 	argv++;
+	while (stack.count > i)
+	{
+		stack.a[i] = ft_atoi(argv[i]);
+		i++;
+	}
 	check_arg_errors(argc, argv, &stack);
-	printf("hey\n");
-	/*if (argc == 2)
-		argv = ft_split(*argv, ' '); */
 	ft_push_swap(argc, argv);
 	return (0);
 }

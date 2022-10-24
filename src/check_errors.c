@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 13:23:05 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/10/20 14:21:51 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/10/24 12:56:19 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	check_arg_errors(int argc, char **argv, t_stack *stack)
 		exit(0);
 	}
 	check_alpha(argv, stack);
-	repeat_num(argc, argv, stack);
+	repeat_num(stack);
 }
 
 void	check_alpha(char **argv, t_stack *stack)
@@ -49,37 +49,27 @@ void	check_alpha(char **argv, t_stack *stack)
 	}
 }
 
-void	repeat_num(int argc, char **argv, t_stack *stack)
+void	repeat_num(t_stack *stack)
 {
 	int	i;
 	int	n;
-	int	k;
-	int	aux;
 
-	i = 1;
-	n = 0;
-	aux = argc - 1;
-	while (argv[i])
+	i = 0;
+	n = 1;
+	while (stack->count > i)
 	{
-		aux = atoi(argv[i]);
-		i++;
-	}
-	i = 1;
-	while (argv[i])
-	{
-		k = 1;
-		while (argv[i][n])
+		while (stack->count > n)
 		{
-			if (argv[i][n] == argv[i][k])
+			if (stack->a[i] == stack->a[n])
 			{
-				ft_putendl_fd("Error, nummber repeat", 2);
+				ft_putendl_fd("Error number repeat", 2);
 				free(stack->a);
 				free(stack->b);
 				exit (0);
 			}
 			n++;
-			k++;
 		}
 		i++;
+		//n = i + 1;
 	}
 }
