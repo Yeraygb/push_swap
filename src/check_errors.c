@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 13:23:05 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/10/20 13:14:10 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/10/20 14:21:51 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ void	repeat_num(int argc, char **argv, t_stack *stack)
 	int	aux;
 
 	i = 1;
+	n = 0;
 	aux = argc - 1;
 	while (argv[i])
 	{
@@ -66,7 +67,6 @@ void	repeat_num(int argc, char **argv, t_stack *stack)
 	i = 1;
 	while (argv[i])
 	{
-		n = 1;
 		k = 1;
 		while (argv[i][n])
 		{

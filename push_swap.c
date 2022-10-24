@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 10:37:28 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/10/20 13:02:36 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/10/24 10:52:47 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_push_swap(int argc, char **argv)
 		//printf("1º: %s\n", argv[0]);
 		while (argv[i])
 		{
-	/* 		if (check_alpha(argv[i]))
+	/*		if (check_alpha(argv[i]))
 				ft_putendl_fd("Error", 2); */
 			//printf("2º: %s\n", argv[i]);
 			i++;
