@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 13:23:05 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/10/24 12:56:19 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/10/24 14:21:25 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	check_arg_errors(int argc, char **argv, t_stack *stack)
 	{
 		ft_putendl_fd("Number of argument invalid", 2);
 		free(stack->a);
-		free(stack->b);
 		exit(0);
 	}
 	check_alpha(argv, stack);
@@ -38,9 +37,8 @@ void	check_alpha(char **argv, t_stack *stack)
 		{
 			if (argv[i][n] < '0' || argv[i][n] > '9')
 			{
-				ft_putendl_fd("Error", 2);
+				ft_putendl_fd("Error, alpha", 2);
 				free(stack->a);
-				free(stack->b);
 				exit (0);
 			}
 			n++;
@@ -62,14 +60,13 @@ void	repeat_num(t_stack *stack)
 		{
 			if (stack->a[i] == stack->a[n])
 			{
-				ft_putendl_fd("Error number repeat", 2);
+				ft_putendl_fd("Error, number repeat", 2);
 				free(stack->a);
-				free(stack->b);
 				exit (0);
 			}
 			n++;
 		}
 		i++;
-		//n = i + 1;
+		n = i + 1;
 	}
 }

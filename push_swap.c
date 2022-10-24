@@ -6,13 +6,13 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 10:37:28 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/10/24 13:00:23 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/10/24 14:22:50 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/push_swap.h"
 
-int	ft_number_count(char **argv)
+int	ft_count(char **argv)
 {
 	size_t	count;
 
@@ -54,9 +54,9 @@ int	main(int argc, char **argv)
 	int		i;
 //	t_list	stack_a;
 	i = 0;
-	stack.count = ft_number_count(argv);
-	stack.a = (int *) malloc((stack.count) * sizeof(int));
 	argv++;
+	stack.count = ft_count(argv);
+	stack.a = (int *) malloc((stack.count) * sizeof(int));
 	while (stack.count > i)
 	{
 		stack.a[i] = ft_atoi(argv[i]);
