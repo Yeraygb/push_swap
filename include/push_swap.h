@@ -36,7 +36,7 @@ void	ft_putendl_fd(char *s, int fd);
 char	**ft_split(char const *s, char c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 size_t	ft_strlen(const char *str);
-void	check_arg_errors(int argc, char **argv, t_stack *stack);
+void	check_errors(int argc, char **argv, t_stack *stack);
 char	*ft_strjoin(char const *s1, char const *s2);
 void	check_alpha(char **argv, t_stack *stack);
 void	repeat_num(t_stack *stack);

@@ -12,7 +12,7 @@
 
 #include "../include/push_swap.h"
 
-void	check_arg_errors(int argc, char **argv, t_stack *stack)
+void	check_errors(int argc, char **argv, t_stack *stack)
 {
 	if (argc < 2)
 	{

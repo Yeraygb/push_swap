@@ -62,7 +62,7 @@ int	main(int argc, char **argv)
 		stack.a[i] = ft_atoi(argv[i]);
 		i++;
 	}
-	check_arg_errors(argc, argv, &stack);
+	check_errors(argc, argv, &stack);
 	ft_push_swap(argc, argv);
 	return (0);
 }
