@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 13:23:05 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/10/24 14:21:25 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/10/26 13:54:15 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	check_errors(int argc, char **argv, t_stack *stack)
 		free(stack->a);
 		exit(0);
 	}
-	check_alpha(argv, stack);
-	repeat_num(stack);
+	//check_alpha(argv, stack);
+	//repeat_num(stack);
 }
 
 void	check_alpha(char **argv, t_stack *stack)

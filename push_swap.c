@@ -6,29 +6,17 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 10:37:28 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/10/24 14:22:50 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/10/26 14:07:54 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/push_swap.h"
 
-int	ft_count(char **argv)
-{
-	size_t	count;
-
-	count = 0;
-	while (*argv)
-	{
-		count++;
-		argv++;
-	}
-	return (count);
-}
-
 void	ft_push_swap(int argc, char **argv)
 {
 	int	i;
 
+	(void)argv;
 	i = 0;
 	if (argc == 4)
 		printf("3 argumentos\n");
@@ -37,32 +25,37 @@ void	ft_push_swap(int argc, char **argv)
 	else
 	{
 		printf("muchos argumentos\n");
-		//printf("1º: %s\n", argv[0]);
-		while (argv[i])
-		{
-	/*		if (check_alpha(argv[i]))
-				ft_putendl_fd("Error", 2); */
-			//printf("2º: %s\n", argv[i]);
-			i++;
-		}
 	}
 }
 
 int	main(int argc, char **argv)
 {
 	t_stack	stack;
+	t_list	*list;
 	int		i;
-//	t_list	stack_a;
+	int		j;
+	char	**aux;
+
+	j = 0;
+	list = malloc(sizeof(t_list));
+	if (!list)
+		return (0);
 	i = 0;
 	argv++;
-	stack.count = ft_count(argv);
-	stack.a = (int *) malloc((stack.count) * sizeof(int));
-	while (stack.count > i)
+	//stack.a = (int *) malloc((stack.count) * sizeof(int));
+	/* while (argv[i])
 	{
-		stack.a[i] = ft_atoi(argv[i]);
+		aux = ft_split(argv[i], ' ');
+		while (aux[j])
+		{
+			stack.a[j] = do_atoi(aux[j]);
+			free(aux);
+			j++;
+		}
 		i++;
-	}
+	} */
 	check_errors(argc, argv, &stack);
+	do_list(argv, &list);
 	ft_push_swap(argc, argv);
 	return (0);
 }
