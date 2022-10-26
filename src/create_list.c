@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 11:13:25 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/10/26 15:07:39 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/10/26 15:10:03 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,5 @@ void	create_list(t_list *list, char *aux)
 	int	n;
 
 	n = ft_atoi(aux);
+	
 }
