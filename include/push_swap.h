@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 11:55:24 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/10/26 14:07:11 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/10/26 15:20:25 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,6 @@ void	repeat_num(t_stack *stack);
 void	do_list(char **argv, t_list *list);
 void	ft_push_swap(int argc, char **argv);
 int		*do_atoi(char *str);
+int		atoi_and_list(t_list *list, char *aux);
 
 #endif

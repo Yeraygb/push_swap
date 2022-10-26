@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 11:13:25 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/10/26 15:10:03 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/10/26 15:20:28 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	do_list(char **argv, t_list *list)
 	}
 	while (aux[j])
 	{
-		create_list(&list, aux[j]);
+		atoi_and_list(&list, aux[j]);
 		j++;
 	}
 }
@@ -44,10 +44,10 @@ void	do_list(char **argv, t_list *list)
 	}
 } */
 
-void	create_list(t_list *list, char *aux)
+int	atoi_and_list(t_list *list, char *aux)
 {
 	int	n;
 
 	n = ft_atoi(aux);
-	
+	return (n);
 }
