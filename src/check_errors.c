@@ -12,19 +12,18 @@
 
 #include "../include/push_swap.h"
 
-void	check_errors(int argc, char **argv, t_stack *stack)
+void	check_errors(int argc, char **argv)
 {
 	if (argc < 2)
 	{
 		ft_putendl_fd("Number of argument invalid", 2);
-		free(stack->a);
 		exit(0);
 	}
 	//check_alpha(argv, stack);
 	//repeat_num(stack);
 }
 
-void	check_alpha(char **argv, t_stack *stack)
+void	check_alpha(char **argv)
 {
 	int	i;
 	int	n;
@@ -38,7 +37,6 @@ void	check_alpha(char **argv, t_stack *stack)
 			if (argv[i][n] < '0' || argv[i][n] > '9')
 			{
 				ft_putendl_fd("Error, alpha", 2);
-				free(stack->a);
 				exit (0);
 			}
 			n++;
@@ -61,7 +59,6 @@ void	repeat_num(t_stack *stack)
 			if (stack->a[i] == stack->a[n])
 			{
 				ft_putendl_fd("Error, number repeat", 2);
-				free(stack->a);
 				exit (0);
 			}
 			n++;

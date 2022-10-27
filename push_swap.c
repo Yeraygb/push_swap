@@ -54,7 +54,7 @@ int	main(int argc, char **argv)
 		}
 		i++;
 	} */
-	check_errors(argc, argv, &stack);
+	check_errors(argc, argv);
 	do_list(argv, &list);
 	ft_push_swap(argc, argv);
 	return (0);

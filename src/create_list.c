@@ -12,11 +12,12 @@
 
 #include "../include/push_swap.h"
 
-void	do_list(char **argv, t_list *list)
+void	do_list(char **argv, t_list **list)
 {
 	int		i;
 	int		j;
 	char	**aux;
+	int		*number;
 
 	i = 0;
 	j = 0;
@@ -25,11 +26,20 @@ void	do_list(char **argv, t_list *list)
 		aux = ft_split(argv[i], ' ');
 		i++;
 	}
+	check_alpha(aux);
 	while (aux[j])
 	{
-		atoi_and_list(&list, aux[j]);
+		number = atoi_and_list(*list, aux[j]);
 		j++;
 	}
+}
+
+int	atoi_and_list(t_list *list, char *aux)
+{
+	int	n;
+
+	n = ft_atoi(aux);
+	return (n);
 }
 
 /* int	*do_atoi(char *str)
@@ -43,11 +53,3 @@ void	do_list(char **argv, t_list *list)
 		i++;
 	}
 } */
-
-int	atoi_and_list(t_list *list, char *aux)
-{
-	int	n;
-
-	n = ft_atoi(aux);
-	return (n);
-}

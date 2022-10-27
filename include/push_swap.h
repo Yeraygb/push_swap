@@ -42,10 +42,10 @@ int		ft_atoi(const char *str);
 
 /*----------- Push Swap -----------*/
 
-void	check_errors(int argc, char **argv, t_stack *stack);
-void	check_alpha(char **argv, t_stack *stack);
+void	check_errors(int argc, char **argv);
+void	check_alpha(char **argv);
 void	repeat_num(t_stack *stack);
-void	do_list(char **argv, t_list *list);
+void	do_list(char **argv, t_list **list);
 void	ft_push_swap(int argc, char **argv);
 int		*do_atoi(char *str);
 int		atoi_and_list(t_list *list, char *aux);
