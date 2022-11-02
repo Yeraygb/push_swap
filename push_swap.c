@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 10:37:28 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/02 11:00:08 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/02 14:56:00 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ int	main(int argc, char **argv)
 	int		j;
 	char	**aux;
 
-	(void)stack;
 	(void)aux;
 	j = 0;
 	list = malloc(sizeof(t_list));
@@ -44,18 +43,6 @@ int	main(int argc, char **argv)
 		return (0);
 	i = 0;
 	argv++;
-	//stack.a = (int *) malloc((stack.count) * sizeof(int));
-	/* while (argv[i])
-	{
-		aux = ft_split(argv[i], ' ');
-		while (aux[j])
-		{
-			stack.a[j] = do_atoi(aux[j]);
-			free(aux);
-			j++;
-		}
-		i++;
-	} */
 	check_errors(argc, argv);
 	do_list(argv, &list, &stack);
 	//ft_push_swap(argc, argv);

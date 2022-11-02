@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 11:55:24 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/02 12:29:37 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/02 14:53:01 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,6 @@ int		*do_atoi(char *str);
 void	atoi_and_list(t_list *list, char *aux, int comp);
 char	*ft_strdup(const char *s1);
 void	count_numbers(t_stack *stack, char **argv);
+void	creating_list(t_list **list, t_stack *stack);
 
 #endif

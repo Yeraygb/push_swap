@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 11:13:25 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/02 13:02:08 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/02 14:56:28 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,15 @@ void	count_numbers(t_stack *stack, char **argv)
 
 void	do_list(char **argv, t_list **list, t_stack *stack)
 {
-	int		i;
+	int	i;
 
-	(void)list;
 	i = 0;
 	stack->c = 0;
 	stack->count = 0;
 	count_numbers(stack, argv);
 	stack->num = malloc(sizeof(char *) * (stack->num_count + 1));
+	if (!stack->num)
+		return ;
 	while (argv[i])
 	{
 		stack->count = 0;
@@ -59,61 +60,49 @@ void	do_list(char **argv, t_list **list, t_stack *stack)
 		i++;
 	}
 	stack->num[stack->c] = 0;
-	i = 0;
-	while (stack->num[i])
-	{
-		printf("%s\n", stack->num[i]);
-		free(stack->num[i]);
-		i++;
-	}
-	free(stack->num);
-/* 	while (aux[j])
+	creating_list(list, stack);
+}
+
+void	creating_list(t_list **list, t_stack *stack)
+{
+	int	j;
+	int	comp;
+
+	comp = 0;
+	j = 0;
+	while (stack->num[j])
 	{
 		if (comp == 0)
 		{
-			atoi_and_list(*list, aux[j], comp);
+			atoi_and_list(*list, stack->num[j], comp);
 			comp++;
 			j++;
 		}
-		else
-		{
-			atoi_and_list(*list, aux[j], comp);
-			j++;
-		}
-	} */
+		atoi_and_list(*list, stack->num[j], comp);
+		j++;
+	}
 }
 
-/* void	do_list2()
+void	atoi_and_list(t_list *list_a, char *num, int comp)
 {
-} */
+	int		n;
+	t_list	*aux;
 
-void	atoi_and_list(t_list *list, char *num, int comp)
-{
-	int	n;
-
-	(void)list;
 	n = ft_atoi(num);
+	aux = malloc(sizeof(t_list) * 1);
+	if (!aux)
+		return ;
+	aux->number = n;
 	if (comp == 0)
 	{
-		list->number = n;
-		printf("primero: %d\n", list->number);
+		list_a->number = aux->number;
+		printf("primero: %d\n", list_a->number);
 		comp++;
+		free(aux);
 	}
 	else
 	{
-		list->next->number = n;
-		printf("resto: %d\n", list->next->number);
+		list_a->next = aux;
+		printf("resto: %d\n", (list_a->next)->number);
 	}
 }
-
-/* int	*do_atoi(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		stack->a[i] = ft_atoi(&str[i]);
-		i++;
-	}
-} */
