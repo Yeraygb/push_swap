@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 13:23:05 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/10/31 11:13:23 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/02 16:47:21 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,25 +24,24 @@ void	check_errors(int argc, char **argv)
 	//repeat_num(stack);
 }
 
-void	check_alpha(char **argv)
+void	check_alpha(t_stack stack)
 {
-	int	i;
-	int	n;
+	int		i;
+	char	c;
 
 	i = 0;
-	while (argv[i])
+	while (num[i])
 	{
-		n = 0;
-		while (argv[i][n])
+		while (num[i])
 		{
-			if (argv[i][n] < '0' || argv[i][n] > '9')
+			c = num[i];
+			if (num[i] < '0' || num[i] > '9')
 			{
 				ft_putendl_fd("Error, alpha", 2);
 				exit (0);
 			}
-			n++;
+			i++;
 		}
-		i++;
 	}
 }
 
