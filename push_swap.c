@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 10:37:28 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/02 14:56:00 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/02 15:12:22 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,20 +31,14 @@ void	ft_push_swap(int argc, char **argv)
 int	main(int argc, char **argv)
 {
 	t_stack	stack;
-	t_list	*list;
-	int		i;
-	int		j;
-	char	**aux;
+	t_list	*list_a;
 
-	(void)aux;
-	j = 0;
-	list = malloc(sizeof(t_list));
-	if (!list)
+	list_a = malloc(sizeof(t_list));
+	if (!list_a)
 		return (0);
-	i = 0;
 	argv++;
 	check_errors(argc, argv);
-	do_list(argv, &list, &stack);
+	do_list(argv, &list_a, &stack);
 	//ft_push_swap(argc, argv);
 	return (0);
 }
