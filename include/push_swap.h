@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 11:55:24 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/10/31 13:08:47 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/02 12:29:37 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,13 @@
 
 typedef struct s_stack
 {
-	int	*a;
-	int	*b;
-	int	count;
+	int		*a;
+	int		*b;
+	int		count;
+	int		c;
+	char	**aux;
+	char	**num;
+	int		num_count;
 }	t_stack;
 
 typedef struct s_list
@@ -45,10 +49,11 @@ int		ft_atoi(const char *str);
 void	check_errors(int argc, char **argv);
 void	check_alpha(char **argv);
 void	repeat_num(t_stack *stack);
-void	do_list(char **argv, t_list **list);
+void	do_list(char **argv, t_list **list, t_stack *stack);
 void	ft_push_swap(int argc, char **argv);
 int		*do_atoi(char *str);
 void	atoi_and_list(t_list *list, char *aux, int comp);
 char	*ft_strdup(const char *s1);
+void	count_numbers(t_stack *stack, char **argv);
 
 #endif

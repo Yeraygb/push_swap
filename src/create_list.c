@@ -6,58 +6,67 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 11:13:25 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/10/31 13:15:23 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/02 13:02:08 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	do_list(char **argv, t_list **list)
+void	count_numbers(t_stack *stack, char **argv)
 {
 	int		i;
 	int		j;
-	int		count;
-	int		comp;
 	char	**aux;
-	char	**aux1;
-	int		c;
 
-	(void)list;
-	c = 0;
-	comp = 0;
-	count = 0;
 	i = 0;
-	j = 0;
-	printf("argv1: %s\n", argv[0]);
-	printf("argv2: %s\n", argv[1]);
-	printf("argv3: %s\n", argv[2]);
-	aux1 = malloc(sizeof(char *) * 10000);
+	stack->num_count = 0;
 	while (argv[i])
 	{
-		count = 0;
 		aux = ft_split(argv[i], ' ');
-		while (aux[count])
+		j = 0;
+		while (aux[j])
 		{
-			aux1[c] = ft_strdup(aux[count]);
-			c++;
-			count++;
+			j++;
+			stack->num_count++;
+			free(aux[j]);
 		}
 		free(aux);
 		i++;
 	}
-	aux1[c] = 0;
-	//check_alpha(aux);
-	//printf("aux1: %s\n", aux1[0]);
-	//printf("aux2: %s\n", aux1[1]);
-	//printf("aux3: %s\n", aux[2]);
+}
+
+void	do_list(char **argv, t_list **list, t_stack *stack)
+{
+	int		i;
+
+	(void)list;
 	i = 0;
-	while (aux1[i])
+	stack->c = 0;
+	stack->count = 0;
+	count_numbers(stack, argv);
+	stack->num = malloc(sizeof(char *) * (stack->num_count + 1));
+	while (argv[i])
 	{
-		printf("%s\n", aux1[i]);
-		free(aux1[i]);
+		stack->count = 0;
+		stack->aux = ft_split(argv[i], ' ');
+		while (stack->aux[stack->count])
+		{
+			stack->num[stack->c] = ft_strdup(stack->aux[stack->count]);
+			stack->c++;
+			stack->count++;
+		}
+		free(stack->aux);
 		i++;
 	}
-	free(aux1);
+	stack->num[stack->c] = 0;
+	i = 0;
+	while (stack->num[i])
+	{
+		printf("%s\n", stack->num[i]);
+		free(stack->num[i]);
+		i++;
+	}
+	free(stack->num);
 /* 	while (aux[j])
 	{
 		if (comp == 0)
@@ -73,6 +82,10 @@ void	do_list(char **argv, t_list **list)
 		}
 	} */
 }
+
+/* void	do_list2()
+{
+} */
 
 void	atoi_and_list(t_list *list, char *num, int comp)
 {
