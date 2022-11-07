@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 11:55:24 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/07 12:20:55 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/07 13:36:20 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ typedef struct s_stack
 typedef struct s_list
 {
 	int				number;
-	int				i;
 	struct s_list	*next;
 }	t_list;
 
@@ -46,15 +45,16 @@ int		ft_atoi(const char *str);
 
 /*----------- Push Swap -----------*/
 
-void	check_errors(int argc, char **argv);
+void	check_arg_errors(int argc);
 void	check_alpha(t_stack *stack);
 void	repeat_num(t_stack *stack);
 void	do_list(char **argv, t_list **list, t_stack *stack);
-void	ft_push_swap(int argc, char **argv);
 int		*do_atoi(char *str);
 void	atoi_and_list(t_list *list, char *aux, int comp);
 char	*ft_strdup(const char *s1);
 void	count_numbers(t_stack *stack, char **argv);
 void	creating_list(t_list **list, t_stack *stack);
+void	ft_push_swap(int argc, char **argv, t_list **list_a);
+void	order_3(t_list *list_a);
 
 #endif
