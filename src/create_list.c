@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 11:13:25 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/02 16:39:06 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/07 12:20:19 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,8 +79,11 @@ void	creating_list(t_list **list_a, t_stack *stack)
 			comp++;
 			j++;
 		}
-		atoi_and_list(*list_a, stack->num[j], comp);
-		j++;
+		else
+		{
+			atoi_and_list(*list_a, stack->num[j], comp);
+			j++;
+		}
 	}
 }
 
@@ -90,7 +93,7 @@ void	atoi_and_list(t_list *list_a, char *num, int comp)
 	t_list	*aux;
 
 	n = ft_atoi(num);
-	if (n < 2147483647 || n > -2147483648)
+	if (n > 2147483647 || n < -2147483648)
 		return ;
 	aux = malloc(sizeof(t_list) * 1);
 	if (!aux)

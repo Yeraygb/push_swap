@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 11:55:24 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/02 15:57:30 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/07 12:20:55 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-/*----------- Libft -----------*/
+/*------------ Libft ------------*/
 
 void	ft_putendl_fd(char *s, int fd);
 char	**ft_split(char const *s, char c);
@@ -47,7 +47,7 @@ int		ft_atoi(const char *str);
 /*----------- Push Swap -----------*/
 
 void	check_errors(int argc, char **argv);
-void	check_alpha(char **argv);
+void	check_alpha(t_stack *stack);
 void	repeat_num(t_stack *stack);
 void	do_list(char **argv, t_list **list, t_stack *stack);
 void	ft_push_swap(int argc, char **argv);

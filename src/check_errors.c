@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 13:23:05 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/02 16:47:21 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/07 12:13:34 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,28 +20,27 @@ void	check_errors(int argc, char **argv)
 		ft_putendl_fd("Number of argument invalid", 2);
 		exit(0);
 	}
-	//check_alpha(argv, stack);
-	//repeat_num(stack);
 }
 
-void	check_alpha(t_stack stack)
+void	check_alpha(t_stack *stack)
 {
-	int		i;
-	char	c;
+	int	i;
+	int	j;
 
 	i = 0;
-	while (num[i])
+	while (stack->num[i] != 0)
 	{
-		while (num[i])
+		j = 0;
+		while (stack->num[i][j])
 		{
-			c = num[i];
-			if (num[i] < '0' || num[i] > '9')
+			if (stack->num[i][j] < '0' || stack->num[i][j] > '9')
 			{
 				ft_putendl_fd("Error, alpha", 2);
 				exit (0);
 			}
-			i++;
+			j++;
 		}
+		i++;
 	}
 }
 
