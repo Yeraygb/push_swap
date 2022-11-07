@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 12:56:06 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/07 13:07:17 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/07 14:37:58 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,4 +15,9 @@
 void	order_3(t_list *list_a)
 {
 	if ()
+}
+
+void	order_3(t_list *list_a)
+{
+	
 }
