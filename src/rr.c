@@ -1,28 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   order_few.c                                        :+:      :+:    :+:   */
+/*   rr.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 12:56:06 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/08 13:01:39 by ygonzale         ###   ########.fr       */
+/*   Created: 2022/11/08 10:47:02 by ygonzale          #+#    #+#             */
+/*   Updated: 2022/11/08 13:00:54 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	order_3(t_list *list_a)
+void	rra(t_list *list_a)
 {
-	if (list_a->number > (list_a->next)->number)
-	{
-		rra(list_a);
-	}
-	else
-		rra(list_a);
+	t_list	*aux;
+
+	aux = 0;
+	aux = list_a;
+	while (list_a->next)
+		list_a = list_a->next;
+	list_a->next = aux;
+	//aux = list_a->next;
+	//list_a = list_a->next;
+	ft_putendl_fd("rra", 2);
 }
 
-/* void	order_5(t_list *list_a)
+void	rrb(t_list *list_b)
 {
-	
-} */
+	t_list	*aux;
+
+	aux = 0;
+	aux = list_b;
+	while (list_b->next)
+		list_b = list_b->next;
+	list_b->next = aux;
+	ft_putendl_fd("rrb", 2);
+}
+
+void	rrr(t_list *list_a, t_list *list_b)
+{
+	rra(list_a);
+	rrb(list_b);
+}

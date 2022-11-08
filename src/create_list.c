@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 11:13:25 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/07 12:20:19 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/08 12:34:09 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,24 +91,31 @@ void	atoi_and_list(t_list *list_a, char *num, int comp)
 {
 	int		n;
 	t_list	*aux;
+	t_list	*first;
 
 	n = ft_atoi(num);
 	if (n > 2147483647 || n < -2147483648)
 		return ;
-	aux = malloc(sizeof(t_list) * 1);
+	aux = calloc(1, sizeof(t_list));
 	if (!aux)
 		return ;
 	aux->number = n;
+	aux->next = 0;
+	first = list_a;
 	if (comp == 0)
 	{
 		list_a->number = aux->number;
-		printf("primero: %d\n", list_a->number);
+		list_a->next = 0;
+		//printf("primero: %d\n", list_a->number);
 		comp++;
 		free(aux);
 	}
 	else
 	{
+		while (list_a && list_a->next)
+			list_a = list_a->next;
 		list_a->next = aux;
-		printf("resto: %d\n", (list_a->next)->number);
+		//printf("resto: %d\n", aux->number);
 	}
+	list_a = first;
 }

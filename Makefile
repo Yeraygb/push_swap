@@ -6,7 +6,7 @@
 #    By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/29 13:39:06 by ygonzale          #+#    #+#              #
-#    Updated: 2022/11/07 13:27:40 by ygonzale         ###   ########.fr        #
+#    Updated: 2022/11/08 12:47:57 by ygonzale         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,9 @@ SRC = push_swap.c \
 	src/create_list.c \
 	src/ft_strdup.c \
 	src/order_few.c \
-	src/s.c
+	src/s.c \
+	src/r.c \
+	src/rr.c
 
 OBJS = $(SRC:.c=.o)
 FLAGS = gcc -Wall -Werror -Wextra -g3 -fsanitize=address 
