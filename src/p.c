@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 13:02:06 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/08 13:05:52 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/08 13:38:04 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,10 @@ void	pa(t_list *list_a, t_list *list_b)
 {
 	t_list	*aux;
 
+	if (list_b == 0)
+		return ;
 	aux = list_b;
 	list_b = list_b->next;
-	
+	aux->next = list_b;
+	list_a = aux;
 }

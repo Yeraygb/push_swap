@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 10:37:28 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/08 12:51:30 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/08 13:32:00 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	ft_push_swap(int argc, t_list **list_a, t_list **list_b)
 {
 	int	i;
 
-	(void)list_b;
 	i = 0;
 	if (argc == 4)
 	{
@@ -27,7 +26,7 @@ void	ft_push_swap(int argc, t_list **list_a, t_list **list_b)
 		printf("5 argumentos\n");
 	else
 	{
-		rra(*list_a);
+		pa(*list_a, *list_b);
 		printf("muchos argumentos\n");
 	}
 }
