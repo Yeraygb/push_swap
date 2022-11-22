@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 11:55:24 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/08 13:31:32 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/22 12:27:22 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,9 @@ void	count_numbers(t_stack *stack, char **argv);
 void	creating_list(t_list **list, t_stack *stack);
 void	ft_push_swap(int argc, t_list **list_a, t_list **list_b);
 void	order_3(t_list *list_a);
-void	order_5(t_list *list_a);
+void	order_5(t_list *list_a, t_list *list_b);
+void	ar5_first(t_list *list_a, t_list *list_b);
+void	ar5_second(t_list *list_a, t_list *list_b);
 void	sa(t_list *list_a);
 void	sb(t_list *list_b);
 void	ss(t_list *list_a, t_list *list_b);
@@ -65,5 +67,6 @@ void	rb(t_list *list_b);
 void	rr(t_list *list_a, t_list *list_b);
 void	rra(t_list *list_a);
 void	pa(t_list *list_a, t_list *list_b);
+void	pb(t_list *list_a, t_list *list_b);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/29 13:39:06 by ygonzale          #+#    #+#              #
-#    Updated: 2022/11/08 13:32:19 by ygonzale         ###   ########.fr        #
+#    Updated: 2022/11/22 12:31:18 by ygonzale         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SRC = push_swap.c \
 	src/s.c \
 	src/r.c \
 	src/rr.c \
-	src/p.c
+	src/p.c \
 
 OBJS = $(SRC:.c=.o)
 FLAGS = gcc -Wall -Werror -Wextra -g3 -fsanitize=address 
