@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 12:56:06 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/22 14:52:50 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/22 15:25:35 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,20 +43,27 @@ void	order_5(t_list *list_a, t_list *list_b)
 
 void	ar5_first(t_list *list_a, t_list *list_b)
 {
-	if (list_a->number > (((list_a->next)->next)->next)->number)
+/* 	printf("1\n");
+	printf("primernumer: %d\n", list_a->number);
+	printf("segundonumer: %d\n", (list_a->next)->number); */
+	if (list_b->number > (((list_a->next)->next)->next)->number)
 	{
+		printf("2\n");
 		pa(&list_a, &list_b);
 		ra(list_a);
+		printf("hacepa\n");
 	}
-	if (list_a->number > ((list_a->next)->next)->number)
+	if (list_b->number > ((list_a->next)->next)->number)
 	{
+		printf("3\n");
 		rra(list_a);
 		pa(&list_a, &list_b);
 		ra(list_a);
 		ra(list_a);
 	}
-	if (list_a->number > (list_a->next)->number)
+	if (list_b->number > (list_a->next)->number)
 	{
+		printf("4\n");
 		pa(&list_a, &list_b);
 		sa(list_a);
 	}
