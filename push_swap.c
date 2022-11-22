@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 10:37:28 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/22 11:23:46 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/22 14:50:47 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ void	ft_push_swap(int argc, t_list **list_a, t_list **list_b)
 	}
 	else
 	{
-		pa(*list_a, *list_b);
-		pb(*list_a, *list_b);
+		pa(list_a, list_b);
+		pb(list_a, list_b);
 		printf("muchos argumentos\n");
 	}
 }

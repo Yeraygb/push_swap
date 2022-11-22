@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 11:55:24 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/22 12:27:22 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/22 14:38:33 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	ra(t_list *list_a);
 void	rb(t_list *list_b);
 void	rr(t_list *list_a, t_list *list_b);
 void	rra(t_list *list_a);
-void	pa(t_list *list_a, t_list *list_b);
-void	pb(t_list *list_a, t_list *list_b);
+void	pa(t_list **list_a, t_list **list_b);
+void	pb(t_list **list_a, t_list **list_b);
 
 #endif
