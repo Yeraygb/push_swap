@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 15:33:31 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/22 15:28:38 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/23 10:48:53 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ void	ra(t_list *list_a)
 	list_a = aux->next;
 	//printf("despues number: %d\n", list_a->number);
 	//printf("despues number: %d\n", list_a->next->number);
-	//printf("despues number: %d\n", list_a->next->next->number);
-	ft_putendl_fd("ra", 2);*/
+	//printf("despues number: %d\n", list_a->next->next->number);*/
+	ft_putendl_fd("ra", 2);
 }
 
 void	rb(t_list *list_b)

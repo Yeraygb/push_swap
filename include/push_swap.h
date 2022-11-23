@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 11:55:24 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/22 14:38:33 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/23 13:29:32 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,24 +48,27 @@ int		ft_atoi(const char *str);
 void	check_arg_errors(int argc);
 void	check_alpha(t_stack *stack);
 void	repeat_num(t_stack *stack);
+
 void	do_list(char **argv, t_list **list, t_stack *stack);
-int		*do_atoi(char *str);
+//int		*do_atoi(char *str);
 void	atoi_and_list(t_list *list, char *aux, int comp);
 char	*ft_strdup(const char *s1);
 void	count_numbers(t_stack *stack, char **argv);
 void	creating_list(t_list **list, t_stack *stack);
-void	ft_push_swap(int argc, t_list **list_a, t_list **list_b);
-void	order_3(t_list *list_a);
-void	order_5(t_list *list_a, t_list *list_b);
+
+void	ft_push_swap(int argc, t_list *list_a, t_list *list_b);
+void	order_3(t_list **list_a);
+void	order_5(t_list **list_a, t_list **list_b);
 void	ar5_first(t_list *list_a, t_list *list_b);
 void	ar5_second(t_list *list_a, t_list *list_b);
+
 void	sa(t_list *list_a);
 void	sb(t_list *list_b);
 void	ss(t_list *list_a, t_list *list_b);
 void	ra(t_list *list_a);
 void	rb(t_list *list_b);
 void	rr(t_list *list_a, t_list *list_b);
-void	rra(t_list *list_a);
+void	rra(t_list **list_a);
 void	pa(t_list **list_a, t_list **list_b);
 void	pb(t_list **list_a, t_list **list_b);
 
