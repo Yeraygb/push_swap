@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 11:46:41 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/02 12:20:26 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/24 11:23:25 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,4 +95,20 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	}
 	str[len_s1] = '\0';
 	return (str);
+}
+
+int	size_list(t_list **list_a)
+{
+	int		size;
+	t_list	*aux;
+
+	size = 0;
+	aux = *list_a;
+	while (*list_a)
+	{
+		*list_a = (*list_a)->next;
+		size++;
+	}
+	*list_a = aux;
+	return (size);
 }

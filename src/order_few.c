@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 12:56:06 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/24 10:30:49 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/24 11:28:09 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,6 @@ void	order_5(t_list **list_a, t_list **list_b)
 	pb(list_a, list_b);
 	pb(list_a, list_b);
 	order_3(list_a);
-/* 	while (list_a != 0)
-	{
-		printf("numero de la lista a: %d\n", list_a->number);
-		list_a = list_a->next;
-	} */
 	ar5_first(list_a, list_b);
 	ar5_second(list_a, list_b);
 	printf("primero de la lista A: %d\n", (*list_a)->number);

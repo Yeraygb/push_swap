@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 11:55:24 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/23 15:15:33 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/24 11:25:09 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,9 @@ void	atoi_and_list(t_list *list, char *aux, int comp);
 void	count_numbers(t_stack *stack, char **argv);
 void	creating_list(t_list **list, t_stack *stack);
 
-void	ft_push_swap(int argc, t_list *list_a, t_list *list_b);
+int		size_list(t_list **list_a);
+
+void	ft_push_swap(t_list *list_a, t_list *list_b, int size);
 void	order_3(t_list **list_a);
 void	order_5(t_list **list_a, t_list **list_b);
 void	ar5_first(t_list **list_a, t_list **list_b);
