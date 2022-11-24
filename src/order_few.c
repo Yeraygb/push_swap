@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 12:56:06 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/24 13:16:12 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/24 13:31:09 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	order_5(t_list **list_a, t_list **list_b)
 	printf("ultimo de la lista A: %d\n", (((((*list_a)->next)->next)->next)->next)->number);
 }
 
-void	ar5_first(t_list **list_a, t_list **list_b)
+/* void	ar5_first(t_list **list_a, t_list **list_b)
 {
 	if ((*list_b)->number > (((*list_a)->next)->next)->number)
 	{
@@ -75,7 +75,7 @@ void	ar5_first(t_list **list_a, t_list **list_b)
 	}
 	else
 		pa(list_a, list_b);
-}
+} */
 
 /* void	ar5_second(t_list **list_a, t_list **list_b)
 {
@@ -106,6 +106,18 @@ void	ar5_first(t_list **list_a, t_list **list_b)
 	else
 		pa(list_a, list_b);
 } */
+
+int	ar5_first(t_list **list_a, t_list **list_b)
+{
+	if ((*list_b)->number > (((*list_a)->next)->next)->number)
+		return (pa(list_a, list_b), ra(list_a), 0);
+	else if ((*list_b)->number > ((*list_a)->next)->number)
+		return (rra(list_a), pa(list_a, list_b), ra(list_a), ra(list_a), 0);
+	else if ((*list_b)->number > (*list_a)->number)
+		return (pa(list_a, list_b), sa(list_a), 0);
+	else
+		return (pa(list_a, list_b), 0);
+}
 
 int	ar5_second(t_list **list_a, t_list **list_b)
 {
