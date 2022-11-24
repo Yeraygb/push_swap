@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 11:55:24 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/24 11:25:09 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/24 13:23:41 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
+
+//# define CUARTO_NUMERO (((((*list_a)->next)->next)->next)->number);
 
 typedef struct s_stack
 {
@@ -62,7 +64,7 @@ void	ft_push_swap(t_list *list_a, t_list *list_b, int size);
 void	order_3(t_list **list_a);
 void	order_5(t_list **list_a, t_list **list_b);
 void	ar5_first(t_list **list_a, t_list **list_b);
-void	ar5_second(t_list **list_a, t_list **list_b);
+int		ar5_second(t_list **list_a, t_list **list_b);
 
 void	sa(t_list **list_a);
 void	sb(t_list **list_b);

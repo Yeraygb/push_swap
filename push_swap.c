@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 10:37:28 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/24 11:26:56 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/24 13:10:08 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@ void	ft_push_swap(t_list *list_a, t_list *list_b, int size)
 	{
 		printf("3 argumentos\n");
 		order_3(&list_a);
+		printf("Primero: %d\n", list_a->number);
+		printf("Segundo: %d\n", list_a->next->number);
+		printf("Tercero: %d\n", list_a->next->next->number);
 	}
 	else if (size == 5)
 	{
@@ -50,7 +53,6 @@ int	main(int argc, char **argv)
 	check_arg_errors(argc);
 	do_list(argv, &list_a, &stack);
 	size = size_list(&list_a);
-	printf("numeros: %d\n", size);
 	ft_push_swap(list_a, list_b, size);
 	return (0);
 }
