@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 11:55:24 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/25 13:14:37 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/25 14:33:35 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void	do_list(char **argv, t_list **list, t_stack *stack);
 void	atoi_and_list(t_list *list, char *aux, int comp);
 void	count_numbers(t_stack *stack, char **argv);
 void	creating_list(t_list **list, t_stack *stack);
+long	check_atoi(char *num);
 
 int		size_list(t_list **list_a);
 

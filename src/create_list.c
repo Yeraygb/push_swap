@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 11:13:25 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/25 13:19:27 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/25 14:33:21 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,12 +93,7 @@ void	atoi_and_list(t_list *list_a, char *num, int comp)
 	t_list		*aux;
 	t_list		*first;
 
-	n = ft_atoi(num);
-	if (n > 2147483647 || n < -2147483648)
-	{
-		ft_putendl_fd("Error", 2);
-		exit(0);
-	}
+	n = check_atoi(num);
 	aux = calloc(1, sizeof(t_list));
 	if (!aux)
 		return ;
@@ -121,11 +116,15 @@ void	atoi_and_list(t_list *list_a, char *num, int comp)
 	list_a = first;
 }
 
-void check_atoi()
+long	check_atoi(char *num)
 {
+	long	n;
+
+	n = ft_atoi(num);
 	if (n > 2147483647 || n < -2147483648)
 	{
 		ft_putendl_fd("Error", 2);
 		exit(0);
 	}
-}ç
+	return (n);
+}
