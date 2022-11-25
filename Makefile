@@ -6,7 +6,7 @@
 #    By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/29 13:39:06 by ygonzale          #+#    #+#              #
-#    Updated: 2022/11/24 10:58:17 by ygonzale         ###   ########.fr        #
+#    Updated: 2022/11/25 11:48:47 by ygonzale         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,9 @@ SRC = push_swap.c \
 	src/ft_split.c \
 	src/check_errors.c \
 	src/utils.c \
-	src/ft_atoi.c \
+	src/utils2.c \
 	src/create_list.c \
-	src/ft_strdup.c \
+	src/algorithm.c \
 	src/order_few.c \
 	src/s.c \
 	src/r.c \

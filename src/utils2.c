@@ -1,22 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/31 10:58:17 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/10/24 13:00:05 by ygonzale         ###   ########.fr       */
+/*   Created: 2022/11/25 11:42:23 by ygonzale          #+#    #+#             */
+/*   Updated: 2022/11/25 12:59:26 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	ft_atoi(const char *str)
+char	*ft_strdup(const char *s1)
 {
-	int	i;
-	int	num;
-	int	sig;
+	int		i;
+	int		count;
+	char	*s2;
+
+	count = 0;
+	while (s1[count])
+		count++;
+	s2 = malloc(sizeof(char) * (count + 1));
+	if (!s2)
+		return (NULL);
+	i = 0;
+	while (s1[i] != '\0')
+	{
+		s2[i] = s1[i];
+		i++;
+	}
+	s2[i] = '\0';
+	return (s2);
+}
+
+long	ft_atoi(const char *str)
+{
+	long	i;
+	long	num;
+	long	sig;
 
 	i = 0;
 	num = 0;

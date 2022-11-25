@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 11:13:25 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/24 10:44:39 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/25 13:19:27 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,13 +89,16 @@ void	creating_list(t_list **list_a, t_stack *stack)
 
 void	atoi_and_list(t_list *list_a, char *num, int comp)
 {
-	int		n;
-	t_list	*aux;
-	t_list	*first;
+	long		n;
+	t_list		*aux;
+	t_list		*first;
 
 	n = ft_atoi(num);
 	if (n > 2147483647 || n < -2147483648)
-		return ;
+	{
+		ft_putendl_fd("Error", 2);
+		exit(0);
+	}
 	aux = calloc(1, sizeof(t_list));
 	if (!aux)
 		return ;
@@ -106,16 +109,23 @@ void	atoi_and_list(t_list *list_a, char *num, int comp)
 	{
 		list_a->number = aux->number;
 		list_a->next = 0;
-		//printf("primero: %d\n", list_a->number);
-		comp++;
 		free(aux);
+		comp++;
 	}
 	else
 	{
 		while (list_a && list_a->next)
 			list_a = list_a->next;
 		list_a->next = aux;
-		//printf("resto: %d\n", aux->number);
 	}
 	list_a = first;
 }
+
+void check_atoi()
+{
+	if (n > 2147483647 || n < -2147483648)
+	{
+		ft_putendl_fd("Error", 2);
+		exit(0);
+	}
+}ç

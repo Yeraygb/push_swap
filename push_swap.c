@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 10:37:28 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/24 13:10:08 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/25 11:33:06 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,9 @@ void	ft_push_swap(t_list *list_a, t_list *list_b, int size)
 
 	i = 0;
 	if (size == 3)
-	{
-		printf("3 argumentos\n");
 		order_3(&list_a);
-		printf("Primero: %d\n", list_a->number);
-		printf("Segundo: %d\n", list_a->next->number);
-		printf("Tercero: %d\n", list_a->next->next->number);
-	}
 	else if (size == 5)
-	{
-		printf("5 argumentos\n");
 		order_5(&list_a, &list_b);
-	}
 	else
 	{
 		printf("muchos argumentos\n");
