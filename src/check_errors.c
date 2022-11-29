@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 13:23:05 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/25 13:11:33 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/29 15:01:55 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,34 @@ void	check_alpha(t_stack *stack)
 	}
 }
 
-void	repeat_num(t_stack *stack)
+void	repeat_num(t_list **list_a, t_list *aux, int n)
+{
+	while ((*list_a)->next)
+	{
+		if ((*list_a)->number == n || ((*list_a)->next)->number == n)
+		{
+			free(aux);
+			exit (0);
+		}
+		*list_a = (*list_a)->next;
+	}
+}
+
+/* int	ft_check_repeat(t_list **stack_a, t_list *new, int num)
+{
+	while ((*stack_a)->next != 0)
+	{
+		if ((*stack_a)->number == num || ((*stack_a)->next)->number == num)
+		{
+			free(new);
+			return (1);
+		}
+		*stack_a = (*stack_a)->next;
+	}
+	return (0);
+} */
+
+/* void	repeat_num(t_stack *stack)
 {
 	int	i;
 	int	n;
@@ -64,4 +91,4 @@ void	repeat_num(t_stack *stack)
 		i++;
 		n = i + 1;
 	}
-}
+} */

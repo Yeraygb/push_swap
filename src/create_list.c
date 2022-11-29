@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 11:13:25 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/25 14:33:21 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/29 15:00:45 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,7 @@ void	atoi_and_list(t_list *list_a, char *num, int comp)
 	aux->number = n;
 	aux->next = 0;
 	first = list_a;
+	repeat_num(&list_a, aux, n);
 	if (comp == 0)
 	{
 		list_a->number = aux->number;

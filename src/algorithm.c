@@ -6,21 +6,23 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 11:49:19 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/29 12:10:24 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/29 14:35:25 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	ft_algorithm(t_list **list_a, int size)
+void	ft_algorithm(t_list **list_a, t_list **list_b, int size)
 {
 	int	max_bits;
 	//int	i;
 	//int	max_size;
 	(void)list_a;
+	(void)list_b;
 	//i = 0;
 	max_bits = get_bit_number(size);
 	printf("numero de bits: %d\n", max_bits);
+	
 }
 
 int	get_bit_number(int size)

@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 11:55:24 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/29 12:23:25 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/29 15:02:27 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ typedef struct s_list
 
 //# define CUARTO_NUMERO (((((*list_a).next)->next)->next)->number)
 
-/*------------ Libft ------------*/
+/*----------------------- Libft -----------------------*/
 
 size_t	ft_strlen(const char *str);
 void	ft_putendl_fd(char *s, int fd);
@@ -46,13 +46,13 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strdup(const char *s1);
 long	ft_atoi(const char *str);
 
-/*----------- Push Swap -----------*/
+/*---------------------- Push Swap ----------------------*/
 
 void	check_arg_errors(int argc);
 void	check_alpha(t_stack *stack);
-void	repeat_num(t_stack *stack);
+void	repeat_num(t_list **list_a, t_list *aux, int n);
 
-/*----------- Create list -----------*/
+/*---------------------- Create list ----------------------*/
 
 void	do_list(char **argv, t_list **list, t_stack *stack);
 void	atoi_and_list(t_list *list, char *aux, int comp);
@@ -62,7 +62,7 @@ long	check_atoi(char *num);
 
 int		size_list(t_list **list_a);
 
-/*----------- Order -----------*/
+/*---------------------- Order ----------------------*/
 
 void	ft_push_swap(t_list *list_a, t_list *list_b, int size);
 void	order_3(t_list **list_a);
@@ -70,10 +70,10 @@ void	order_5(t_list **list_a, t_list **list_b);
 int		ar5_first(t_list **list_a, t_list **list_b);
 int		ar5_second(t_list **list_a, t_list **list_b);
 
-void	ft_algorithm(t_list **list_a, int size);
+void	ft_algorithm(t_list **list_a, t_list **list_b, int size);
 int		get_bit_number(int size);
 
-/*----------- Movements -----------*/
+/*---------------------- Movements ----------------------*/
 
 void	sa(t_list **list_a);
 void	sb(t_list **list_b);
