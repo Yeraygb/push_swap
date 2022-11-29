@@ -61,6 +61,7 @@ void	do_list(char **argv, t_list **list_a, t_stack *stack)
 	}
 	stack->num[stack->c] = 0;
 	check_alpha(stack);
+	repeat_num(stack);
 	creating_list(list_a, stack);
 }
 
@@ -100,7 +101,6 @@ void	atoi_and_list(t_list *list_a, char *num, int comp)
 	aux->number = n;
 	aux->next = 0;
 	first = list_a;
-	repeat_num(&list_a, aux, n);
 	if (comp == 0)
 	{
 		list_a->number = aux->number;
@@ -115,6 +115,7 @@ void	atoi_and_list(t_list *list_a, char *num, int comp)
 		list_a->next = aux;
 	}
 	list_a = first;
+	//repeat_num(&list_a, aux, n);
 }
 
 long	check_atoi(char *num)
