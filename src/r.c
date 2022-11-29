@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 15:33:31 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/25 11:35:14 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/29 11:45:54 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,21 @@ void	rb(t_list **list_b)
 	t_list	*aux;
 
 	aux = 0;
+	aux = (*list_b);
+	while (aux->next)
+		aux = aux->next;
+	aux->next = (*list_b);
+	aux = (*list_b)->next;
+	(*list_b)->next = 0;
+	(*list_b) = aux;
+	ft_putendl_fd("rb", 2);
+}
+
+/* void	rb(t_list **list_b)
+{
+	t_list	*aux;
+
+	aux = 0;
 	aux = *list_b;
 	while ((*list_b)->next)
 		*list_b = (*list_b)->next;
@@ -39,7 +54,7 @@ void	rb(t_list **list_b)
 	*list_b = aux->next;
 	ft_putendl_fd("rb", 2);
 }
-
+ */
 void	rr(t_list **list_a, t_list **list_b)
 {
 	ra(list_a);

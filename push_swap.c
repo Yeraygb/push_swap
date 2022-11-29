@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 10:37:28 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/25 11:33:06 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/29 12:06:44 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	ft_push_swap(t_list *list_a, t_list *list_b, int size)
 		order_5(&list_a, &list_b);
 	else
 	{
+		ft_algorithm(&list_a, size);
 		printf("muchos argumentos\n");
 	}
 }

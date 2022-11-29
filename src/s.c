@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 13:09:42 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/23 14:51:11 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/29 11:46:20 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,10 @@ void	sa(t_list **list_a)
 {
 	t_list	*aux;
 
-	//printf("antes number: %d\n", list_a->number);
-	//printf("antes number: %d\n", list_a->next->number);
 	aux = *list_a;
 	*list_a = (*list_a)->next;
 	aux->next = (*list_a)->next;
 	(*list_a)->next = aux;
-	//printf("despues number: %d\n", list_a->number);
-	//printf("despues number: %d\n", list_a->next->number);
 	ft_putendl_fd("sa", 2);
 }
 
