@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 11:13:25 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/29 15:00:45 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/30 12:26:13 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	do_list(char **argv, t_list **list_a, t_stack *stack)
 	}
 	stack->num[stack->c] = 0;
 	check_alpha(stack);
-	repeat_num(stack);
+	//repeat_num(stack);
 	creating_list(list_a, stack);
 }
 
@@ -77,6 +77,7 @@ void	creating_list(t_list **list_a, t_stack *stack)
 		if (comp == 0)
 		{
 			atoi_and_list(*list_a, stack->num[j], comp);
+			(*list_a)->index = -1;
 			comp++;
 			j++;
 		}

@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 11:49:19 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/29 14:35:25 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/30 12:56:38 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,27 @@
 void	ft_algorithm(t_list **list_a, t_list **list_b, int size)
 {
 	int	max_bits;
-	//int	i;
-	//int	max_size;
-	(void)list_a;
-	(void)list_b;
-	//i = 0;
+	int	bit_poss;
+	int	j;
+
+	bit_poss = 0;
+	j = 0;
 	max_bits = get_bit_number(size);
-	printf("numero de bits: %d\n", max_bits);
-	
+	while (max_bits > bit_poss)
+	{
+		j = 0;
+		while (j < size)
+		{
+			if ((max_bits >> bit_poss) & -1)
+				ra(list_a);
+			else
+				pb(list_a, list_b);
+			j++;
+		}
+		while (*list_b)
+			pa(list_a, list_b);
+		bit_poss++;
+	}
 }
 
 int	get_bit_number(int size)

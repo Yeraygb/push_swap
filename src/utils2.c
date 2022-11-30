@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 11:42:23 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/25 12:59:26 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/30 12:50:32 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,3 +61,58 @@ long	ft_atoi(const char *str)
 	}
 	return (sig * num);
 }
+
+void	get_num_index(t_list **list_a, int size)
+{
+	t_list	*aux;
+	int		index;
+	int		num_min;
+
+	aux = *list_a;
+	index = 0;
+	num_min = (*list_a)->number;
+	while (index < size)
+	{
+		while (*list_a)
+		{
+			if ((*list_a)->index == -1 && (*list_a)->number < num_min)
+				num_min = (*list_a)->number;
+			*list_a = (*list_a)->next;
+		}
+		*list_a = aux;
+		while ((*list_a)->number != num_min)
+			*list_a = (*list_a)->next;
+		(*list_a)->index = index;
+		*list_a = aux;
+		index++;
+	}
+}
+
+/* void	ft_lst_index(t_list **stack_a)
+{
+	t_list	*begin;
+	int		min;
+	int		size;
+	int		index;
+
+	begin = *stack_a;
+	size = ft_lstlen(*stack_a);
+	min = (*stack_a)->number;
+	index = 0;
+	while (index < size)
+	{
+		while (*stack_a != 0)
+		{
+			if ((*stack_a)->index == -1 && (*stack_a)->number < min)
+				min = (*stack_a)->number;
+			*stack_a = (*stack_a)->next;
+		}
+		*stack_a = begin;
+		while ((*stack_a)->number != min)
+			*stack_a = (*stack_a)->next;
+		(*stack_a)->index = index;
+		*stack_a = begin;
+		min = 2147483647;
+		index++;
+	}
+} */

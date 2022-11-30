@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 11:55:24 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/29 15:02:27 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/30 11:45:34 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_stack
 typedef struct s_list
 {
 	int				number;
+	int				index;
 	struct s_list	*next;
 }	t_list;
 
@@ -60,6 +61,8 @@ void	atoi_and_list(t_list *list, char *aux, int comp);
 void	count_numbers(t_stack *stack, char **argv);
 void	creating_list(t_list **list, t_stack *stack);
 long	check_atoi(char *num);
+
+void	get_num_index(t_list **list_a, int size);
 
 int		size_list(t_list **list_a);
 
