@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 11:42:23 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/30 13:01:13 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/30 14:47:09 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,9 +70,15 @@ void	get_num_index(t_list **list_a, int size)
 
 	aux = *list_a;
 	index = 0;
-	num_min = (*list_a)->number;
 	while (index < size)
 	{
+		while (*list_a)
+		{
+			if ((*list_a)->index == -1)
+				num_min = (*list_a)->number;
+			*list_a = (*list_a)->next;
+		}
+		*list_a = aux;
 		while (*list_a)
 		{
 			if ((*list_a)->index == -1 && (*list_a)->number < num_min)
@@ -84,7 +90,6 @@ void	get_num_index(t_list **list_a, int size)
 			*list_a = (*list_a)->next;
 		(*list_a)->index = index;
 		*list_a = aux;
-		//num_min = 2147483647;
 		index++;
 	}
 }

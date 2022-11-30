@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 11:49:19 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/30 12:58:14 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/30 15:00:30 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_algorithm(t_list **list_a, t_list **list_b, int size)
 		j = 0;
 		while (j < size)
 		{
-			if ((max_bits >> bit_poss) & -1)
+			if (((*list_a)->index >> max_bits) & 1)
 				ra(list_a);
 			else
 				pb(list_a, list_b);
