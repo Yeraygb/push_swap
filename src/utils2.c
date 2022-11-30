@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 11:42:23 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/30 13:00:01 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/30 13:01:13 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,32 +88,3 @@ void	get_num_index(t_list **list_a, int size)
 		index++;
 	}
 }
-
-/* void	ft_lst_index(t_list **stack_a)
-{
-	t_list	*begin;
-	int		min;
-	int		size;
-	int		index;
-
-	begin = *stack_a;
-	size = ft_lstlen(*stack_a);
-	min = (*stack_a)->number;
-	index = 0;
-	while (index < size)
-	{
-		while (*stack_a != 0)
-		{
-			if ((*stack_a)->index == -1 && (*stack_a)->number < min)
-				min = (*stack_a)->number;
-			*stack_a = (*stack_a)->next;
-		}
-		*stack_a = begin;
-		while ((*stack_a)->number != min)
-			*stack_a = (*stack_a)->next;
-		(*stack_a)->index = index;
-		*stack_a = begin;
-		min = 2147483647;
-		index++;
-	}
-} */
