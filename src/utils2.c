@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 11:42:23 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/30 12:50:32 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/30 13:00:01 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ void	get_num_index(t_list **list_a, int size)
 			*list_a = (*list_a)->next;
 		(*list_a)->index = index;
 		*list_a = aux;
+		//num_min = 2147483647;
 		index++;
 	}
 }

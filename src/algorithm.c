@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 11:49:19 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/30 12:56:38 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/11/30 12:58:14 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,21 +51,8 @@ int	get_bit_number(int size)
 	}
 	return (i);
 }
-/* int	define_bits(int *stack_a_nbrs)
-{
-	int	i;
-	int	size;
 
-	i = 0;
-	size = *stack_a_nbrs - 1;
-	while (size > 0)
-	{
-		size = size / 2;
-		i++;
-	}
-	return (i);
-}
-
+/*
 void	start_algorithm(int *stack_a, int *stack_a_nbrs, int *stack_b,
 	int *stack_b_nbrs)
 {
