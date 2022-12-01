@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 13:02:06 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/23 11:47:34 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/12/01 14:38:29 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,3 @@ void	pb(t_list **list_a, t_list **list_b)
 	*list_b = aux;
 	ft_putendl_fd("pb", 2);
 }
-
-/* {
-	t_list	*aux;
-
-	if (*stack_a == 0)
-		return ;
-	aux = *stack_a;
-	*stack_a = (*stack_a)->next;
-	aux->next = *stack_b;
-	*stack_b = aux;
-	write(1, "pb\n", 3);
-} */

@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 11:49:19 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/30 15:00:30 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/12/01 15:04:26 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ void	ft_algorithm(t_list **list_a, t_list **list_b, int size)
 		j = 0;
 		while (j < size)
 		{
-			if (((*list_a)->index >> max_bits) & 1)
+			if (((*list_a)->index >> bit_poss) & 1)
 				ra(list_a);
 			else
 				pb(list_a, list_b);
 			j++;
 		}
-		while (*list_b)
+		while ((*list_b))
 			pa(list_a, list_b);
 		bit_poss++;
 	}
@@ -51,30 +51,3 @@ int	get_bit_number(int size)
 	}
 	return (i);
 }
-
-/*
-void	start_algorithm(int *stack_a, int *stack_a_nbrs, int *stack_b,
-	int *stack_b_nbrs)
-{
-	t_algorithm	algorithm;
-
-	algorithm.nbrs = *stack_a_nbrs;
-	algorithm.loop = 0;
-	algorithm.j = 0;
-	algorithm.size = define_bits(stack_a_nbrs);
-	copy_and_sort_stack(stack_a, stack_a_nbrs);
-	while (algorithm.loop < algorithm.size)
-	{
-		algorithm.j = 0;
-		while (algorithm.j < algorithm.nbrs)
-		{
-			if (((stack_a[0] >> algorithm.loop) & 1) == 1)
-				ra(stack_a, stack_a_nbrs);
-			else
-				pb(stack_a, stack_b, stack_a_nbrs, stack_b_nbrs);
-			algorithm.j++;
-		}
-		while (*stack_b_nbrs > 0)
-			pa(stack_a, stack_b, stack_a_nbrs, stack_b_nbrs);
-		algorithm.loop++;
- */

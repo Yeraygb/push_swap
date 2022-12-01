@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 11:13:25 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/30 14:16:47 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/12/01 15:04:33 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	do_list(char **argv, t_list **list_a, t_stack *stack)
 	stack->c = 0;
 	stack->count = 0;
 	count_numbers(stack, argv);
-	stack->num = malloc(sizeof(char *) * (stack->num_count + 1));
+	stack->num = calloc((stack->num_count + 1), sizeof(char *));
 	if (!stack->num)
 		return ;
 	while (argv[i])

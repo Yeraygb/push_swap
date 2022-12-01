@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 10:37:28 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/30 12:50:09 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/12/01 15:04:21 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,7 @@ void	ft_push_swap(t_list *list_a, t_list *list_b, int size)
 	else if (size == 5)
 		order_5(&list_a, &list_b);
 	else
-	{
 		ft_algorithm(&list_a, &list_b, size);
-		printf("muchos argumentos\n");
-	}
 }
 
 int	main(int argc, char **argv)
@@ -35,11 +32,9 @@ int	main(int argc, char **argv)
 	t_list	*list_b;
 	int		size;
 
-	list_a = malloc(sizeof(t_list));
+	list_b = NULL;
+	list_a = calloc(1, sizeof(t_list));
 	if (!list_a)
-		return (0);
-	list_b = malloc(sizeof(t_list));
-	if (!list_b)
 		return (0);
 	argv++;
 	check_arg_errors(argc);
