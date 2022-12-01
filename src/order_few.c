@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 12:56:06 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/25 11:55:26 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/12/01 15:11:34 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	order_3(t_list **list_a)
 {
-	printf("3 argumentos\n");
 	if (((*list_a)->number > ((*list_a)->next)->number) \
 		&& (((*list_a)->next)->number > (((*list_a)->next)->next)->number))
 	{
@@ -43,17 +42,11 @@ void	order_3(t_list **list_a)
 
 void	order_5(t_list **list_a, t_list **list_b)
 {
-	printf("5 argumentos\n");
 	pb(list_a, list_b);
 	pb(list_a, list_b);
 	order_3(list_a);
 	ar5_first(list_a, list_b);
 	ar5_second(list_a, list_b);
-	printf("primero de la lista A: %d\n", (*list_a)->number);
-	printf("segundo de la lista A: %d\n", ((*list_a)->next)->number);
-	printf("tercero de la lista A: %d\n", (((*list_a)->next)->next)->number);
-	printf("cuarto de la lista A: %d\n", ((((*list_a)->next)->next)->next)->number);
-	printf("ultimo de la lista A: %d\n", (((((*list_a)->next)->next)->next)->next)->number);
 }
 
 int	ar5_first(t_list **list_a, t_list **list_b)
