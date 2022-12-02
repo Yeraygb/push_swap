@@ -39,6 +39,7 @@ int	main(int argc, char **argv)
 	argv++;
 	check_arg_errors(argc);
 	do_list(argv, &list_a, &stack);
+	repeat_num(&list_a);
 	size = size_list(&list_a);
 	get_num_index(&list_a, size);
 	ft_push_swap(list_a, list_b, size);

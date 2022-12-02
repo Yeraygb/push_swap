@@ -43,7 +43,31 @@ void	check_alpha(t_stack *stack)
 	}
 }
 
-void	repeat_num(t_list **list_a, t_list *aux, int n)
+void	repeat_num(t_list **list_a)
+{
+	t_list	*aux;
+	t_list	*repeat;
+
+	aux = *list_a;
+	while (*list_a)
+	{
+		repeat = (*list_a)->next;
+		while (repeat)
+		{
+			if ((*list_a)->number == repeat->number)
+			{
+				ft_putendl_fd("Error", 2);
+				exit (0);
+			}
+			repeat = repeat->next;
+		}
+		
+		*list_a = (*list_a)->next;
+	}
+	*list_a = aux;
+}
+
+/* void	repeat_num(t_list **list_a, t_list *aux, int n)
 {
 	t_list *aux2;
 
@@ -59,7 +83,7 @@ void	repeat_num(t_list **list_a, t_list *aux, int n)
 		*list_a = (*list_a)->next;
 	}
 	*list_a = aux2;
-}
+} */
 
 /* void	repeat_num(t_stack *stack)
 {

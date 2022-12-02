@@ -51,8 +51,8 @@ long	ft_atoi(const char *str);
 
 void	check_arg_errors(int argc);
 void	check_alpha(t_stack *stack);
-void	repeat_num(t_list **list_a, t_list *aux, int n);
-//void	repeat_num(t_stack *stack);
+//void	repeat_num(t_list **list_a, t_list *aux, int n);
+void	repeat_num(t_list **list_a);
 
 /*---------------------- Create list ----------------------*/
 
