@@ -60,7 +60,7 @@ void	check_repeat_num(t_list **list_a)
 				exit (0);
 			}
 			repeat = repeat->next;
-		}	
+		}
 		*list_a = (*list_a)->next;
 	}
 	*list_a = aux;
