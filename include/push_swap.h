@@ -47,18 +47,17 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strdup(const char *s1);
 long	ft_atoi(const char *str);
 
-/*---------------------- Push Swap ----------------------*/
+/*---------------------- Check errors ----------------------*/
 
 void	check_arg_errors(int argc);
 void	check_alpha(t_stack *stack);
-//void	repeat_num(t_list **list_a, t_list *aux, int n);
-void	repeat_num(t_list **list_a);
+void	check_repeat_num(t_list **list_a);
 
 /*---------------------- Create list ----------------------*/
 
+void	count_numbers(t_stack *stack, char **argv);
 void	do_list(char **argv, t_list **list, t_stack *stack);
 void	atoi_and_list(t_list *list, char *aux, int comp);
-void	count_numbers(t_stack *stack, char **argv);
 void	creating_list(t_list **list, t_stack *stack);
 long	check_atoi(char *num);
 
@@ -69,6 +68,7 @@ int		size_list(t_list **list_a);
 /*---------------------- Order ----------------------*/
 
 void	ft_push_swap(t_list *list_a, t_list *list_b, int size);
+
 void	order_3(t_list **list_a);
 void	order_5(t_list **list_a, t_list **list_b);
 int		ar5_first(t_list **list_a, t_list **list_b);

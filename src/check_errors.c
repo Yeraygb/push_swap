@@ -43,7 +43,7 @@ void	check_alpha(t_stack *stack)
 	}
 }
 
-void	repeat_num(t_list **list_a)
+void	check_repeat_num(t_list **list_a)
 {
 	t_list	*aux;
 	t_list	*repeat;
