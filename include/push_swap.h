@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 11:55:24 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/11/30 11:45:34 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/12/06 14:18:53 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,13 @@ void	creating_list(t_list **list, t_stack *stack);
 long	check_atoi(char *num);
 
 void	get_num_index(t_list **list_a, int size);
+int		get_index(t_list **list_a, int num_min);
 
 int		size_list(t_list **list_a);
 
 /*---------------------- Order ----------------------*/
+
+void	ordered_number(t_list **list_a);
 
 void	ft_push_swap(t_list *list_a, t_list *list_b, int size);
 
