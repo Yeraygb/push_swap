@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 10:37:28 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/12/01 15:04:21 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/12/06 14:46:32 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ int	main(int argc, char **argv)
 	argv++;
 	check_arg_errors(argc);
 	do_list(argv, &list_a, &stack);
+	if (ordered_number(&list_a) == 1)
+		exit (0);
 	check_repeat_num(&list_a);
 	size = size_list(&list_a);
 	get_num_index(&list_a, size);

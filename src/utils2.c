@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 11:42:23 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/12/06 14:15:45 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/12/06 15:49:24 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,13 @@ long	ft_atoi(const char *str)
 			sig *= -1;
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
+	while (str[i])
 	{
+		if (str[i] < '0' || str[i] > '9')
+		{
+			write(2, "Error\n", 6);
+			exit (0);
+		}
 		num = num * 10 + (str[i] - '0');
 		i++;
 	}
@@ -100,15 +105,17 @@ int	get_index(t_list **list_a, int num_min)
 	return (num_min);
 }
 
-void	ordered_number(t_list **list_a)
+int	ordered_number(t_list **list_a)
 {
 	t_list	*aux;
 
 	aux = *list_a;
-	while (*list_a)
+	while ((*list_a)->next != 0)
 	{
-		if()
+		if ((*list_a)->number > (*list_a)->next->number)
+			return (0);
 		*list_a = (*list_a)->next;
 	}
 	*list_a = aux;
+	return (1);
 }
