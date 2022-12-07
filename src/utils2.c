@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 11:42:23 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/12/07 11:38:15 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/12/07 12:59:49 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,13 +72,19 @@ int	ordered_number(t_list **list_a)
 	t_list	*aux;
 
 	aux = *list_a;
-	while ((*list_a)->next != 0)
+	while (aux->next != 0)
+	{
+		if (aux->number > aux->next->number)
+			return (0);
+		aux = aux->next;
+	}
+/* 	while ((*list_a)->next != 0)
 	{
 		if ((*list_a)->number > (*list_a)->next->number)
 			return (0);
 		*list_a = (*list_a)->next;
 	}
-	*list_a = aux;
+	*list_a = aux; */
 	return (1);
 }
 

@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 10:37:28 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/12/07 12:09:59 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/12/07 13:04:02 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int	main(int argc, char **argv)
 	t_list	*list_b;
 	int		size;
 
+	(void)size;
 	list_b = NULL;
 	list_a = calloc(1, sizeof(t_list));
 	if (!list_a)
@@ -45,8 +46,5 @@ int	main(int argc, char **argv)
 	size = size_list(&list_a);
 	get_num_index(&list_a, size);
 	ft_push_swap(&list_a, &list_b, size);
-	printf("%d\n", list_a->number);
-	printf("%d\n", list_a->next->number);
-	//printf("%d\n", list_a->next->next->number);
 	return (0);
 }
