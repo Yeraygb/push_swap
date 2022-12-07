@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 11:55:24 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/12/07 12:04:06 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/12/07 14:14:01 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,9 @@ void	check_repeat_num(t_list **list_a);
 
 void	count_numbers(t_stack *stack, char **argv);
 void	do_list(char **argv, t_list **list, t_stack *stack);
-void	atoi_and_list(t_list *list, char *aux, int comp);
 void	creating_list(t_list **list, t_stack *stack);
+void	atoi_and_list(t_list *list, char *aux, int comp);
+void	loop_listcreate(t_list **list_a, t_list **aux);
 long	check_atoi(char *num);
 
 void	get_num_index(t_list **list_a, int size);
