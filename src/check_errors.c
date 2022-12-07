@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 13:23:05 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/12/07 11:57:55 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/12/07 13:35:37 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,6 @@ void	check_alpha(t_stack *stack)
 			j++;
 		}
 		i++;
-	/* 	while (stack->num[i][j])
-		{
-			if (stack->num[i][j] < '0' || stack->num[i][j] > '9' || (stack->num[i][j] == '-' && stack->num[i][j+1]))
-			{
-				ft_putendl_fd("Error", 2);
-				exit (0);
-			}
-			j++;
-		} */
 	}
 }
 
