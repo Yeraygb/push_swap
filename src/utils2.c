@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 11:42:23 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/12/06 15:49:24 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/12/07 11:38:15 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,44 +67,6 @@ long	ft_atoi(const char *str)
 	return (sig * num);
 }
 
-void	get_num_index(t_list **list_a, int size)
-{
-	t_list	*aux;
-	int		index;
-	int		num_min;
-
-	aux = *list_a;
-	index = 0;
-	while (index < size)
-	{
-		num_min = get_index(list_a, num_min);
-		*list_a = aux;
-		while (*list_a)
-		{
-			if ((*list_a)->index == -1 && (*list_a)->number < num_min)
-				num_min = (*list_a)->number;
-			*list_a = (*list_a)->next;
-		}
-		*list_a = aux;
-		while ((*list_a)->number != num_min)
-			*list_a = (*list_a)->next;
-		(*list_a)->index = index;
-		*list_a = aux;
-		index++;
-	}
-}
-
-int	get_index(t_list **list_a, int num_min)
-{
-	while (*list_a)
-	{
-		if ((*list_a)->index == -1)
-			num_min = (*list_a)->number;
-		*list_a = (*list_a)->next;
-	}
-	return (num_min);
-}
-
 int	ordered_number(t_list **list_a)
 {
 	t_list	*aux;
@@ -117,5 +79,12 @@ int	ordered_number(t_list **list_a)
 		*list_a = (*list_a)->next;
 	}
 	*list_a = aux;
+	return (1);
+}
+
+int	ft_isdigit(int c)
+{
+	if (c < '0' || c > '9')
+		return (0);
 	return (1);
 }

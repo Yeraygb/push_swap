@@ -6,23 +6,23 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 10:37:28 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/12/06 14:46:32 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/12/07 12:09:59 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/push_swap.h"
 
-void	ft_push_swap(t_list *list_a, t_list *list_b, int size)
+void	ft_push_swap(t_list **list_a, t_list **list_b, int size)
 {
 	int	i;
 
 	i = 0;
 	if (size == 3)
-		order_3(&list_a);
+		order_3(list_a);
 	else if (size == 5)
-		order_5(&list_a, &list_b);
+		order_5(list_a, list_b);
 	else
-		ft_algorithm(&list_a, &list_b, size);
+		ft_algorithm(list_a, list_b, size);
 }
 
 int	main(int argc, char **argv)
@@ -44,6 +44,9 @@ int	main(int argc, char **argv)
 	check_repeat_num(&list_a);
 	size = size_list(&list_a);
 	get_num_index(&list_a, size);
-	ft_push_swap(list_a, list_b, size);
+	ft_push_swap(&list_a, &list_b, size);
+	printf("%d\n", list_a->number);
+	printf("%d\n", list_a->next->number);
+	//printf("%d\n", list_a->next->next->number);
 	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/29 13:39:06 by ygonzale          #+#    #+#              #
-#    Updated: 2022/11/25 11:48:47 by ygonzale         ###   ########.fr        #
+#    Updated: 2022/12/07 11:38:44 by ygonzale         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ SRC = push_swap.c \
 	src/utils.c \
 	src/utils2.c \
 	src/create_list.c \
+	src/get_index.c \
 	src/algorithm.c \
 	src/order_few.c \
 	src/s.c \

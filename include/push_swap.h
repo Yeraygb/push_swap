@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 11:55:24 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/12/06 14:31:28 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/12/07 12:04:06 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,6 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-//# define CUARTO_NUMERO (((((*list_a).next)->next)->next)->number)
-
 /*----------------------- Libft -----------------------*/
 
 size_t	ft_strlen(const char *str);
@@ -46,6 +44,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strdup(const char *s1);
 long	ft_atoi(const char *str);
+int		ft_isdigit(int c);
 
 /*---------------------- Check errors ----------------------*/
 
@@ -70,7 +69,7 @@ int		size_list(t_list **list_a);
 
 int		ordered_number(t_list **list_a);
 
-void	ft_push_swap(t_list *list_a, t_list *list_b, int size);
+void	ft_push_swap(t_list **list_a, t_list **list_b, int size);
 
 void	order_3(t_list **list_a);
 void	order_5(t_list **list_a, t_list **list_b);
