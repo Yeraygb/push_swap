@@ -6,7 +6,7 @@
 #    By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/29 13:39:06 by ygonzale          #+#    #+#              #
-#    Updated: 2022/12/07 14:34:02 by ygonzale         ###   ########.fr        #
+#    Updated: 2022/12/07 14:56:46 by ygonzale         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ SRC = push_swap.c \
 	src/utils2.c \
 	src/create_list.c \
 	src/get_index.c \
+	src/exit_free.c \
 	src/algorithm.c \
 	src/order_few.c \
 	src/s.c \
@@ -26,7 +27,7 @@ SRC = push_swap.c \
 	src/p.c \
 
 OBJS = $(SRC:.c=.o)
-FLAGS = gcc -Wall -Werror -Wextra -g3
+FLAGS = gcc -Wall -Werror -Wextra -g3 -fsanitize=address 
 
 $(NAME): $(OBJS)
 	@echo ✅ "\033[92;3;4mcompilation done\033[0m" ✅
