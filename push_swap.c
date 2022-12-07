@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 10:37:28 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/12/07 13:04:02 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/12/07 14:37:47 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	main(int argc, char **argv)
 
 	(void)size;
 	list_b = NULL;
-	list_a = calloc(1, sizeof(t_list));
+	list_a = ft_calloc(1, sizeof(t_list));
 	if (!list_a)
 		return (0);
 	argv++;

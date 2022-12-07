@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 11:13:25 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/12/07 14:28:43 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/12/07 14:38:57 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	do_list(char **argv, t_list **list_a, t_stack *stack)
 	stack->c = 0;
 	stack->count = 0;
 	count_numbers(stack, argv);
-	stack->num = calloc((stack->num_count + 1), sizeof(char *));
+	stack->num = ft_calloc((stack->num_count + 1), sizeof(char *));
 	if (!stack->num)
 		return ;
 	while (argv[i])
@@ -94,7 +94,7 @@ void	atoi_and_list(t_list *list_a, char *num, int comp)
 	t_list		*first;
 
 	n = check_atoi(num);
-	aux = calloc(1, sizeof(t_list));
+	aux = ft_calloc(1, sizeof(t_list));
 	if (!aux)
 		return ;
 	aux->number = n;
