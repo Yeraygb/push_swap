@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 10:37:28 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/12/07 14:37:47 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/12/08 12:04:46 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,6 @@ int	main(int argc, char **argv)
 	size = size_list(&list_a);
 	get_num_index(&list_a, size);
 	ft_push_swap(&list_a, &list_b, size);
+	exit_and_free(list_a, 0);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: ygonzale <ygonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 11:13:25 by ygonzale          #+#    #+#             */
-/*   Updated: 2022/12/07 14:38:57 by ygonzale         ###   ########.fr       */
+/*   Updated: 2022/12/08 12:11:44 by ygonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ void	count_numbers(t_stack *stack, char **argv)
 		j = 0;
 		while (aux[j])
 		{
-			j++;
 			stack->num_count++;
 			free(aux[j]);
+			j++;
 		}
 		free(aux);
 		i++;
@@ -54,12 +54,12 @@ void	do_list(char **argv, t_list **list_a, t_stack *stack)
 		{
 			stack->num[stack->c] = ft_strdup(stack->aux[stack->count]);
 			stack->c++;
+			free(stack->aux[stack->count]);
 			stack->count++;
 		}
 		free(stack->aux);
 		i++;
 	}
-	stack->num[stack->c] = 0;
 	check_alpha(stack);
 	creating_list(list_a, stack);
 }
@@ -77,14 +77,17 @@ void	creating_list(t_list **list_a, t_stack *stack)
 		{
 			atoi_and_list(*list_a, stack->num[j], comp);
 			comp++;
+			free(stack->num[j]);
 			j++;
 		}
 		else
 		{
 			atoi_and_list(*list_a, stack->num[j], comp);
+			free(stack->num[j]);
 			j++;
 		}
 	}
+	free(stack->num);
 }
 
 void	atoi_and_list(t_list *list_a, char *num, int comp)
